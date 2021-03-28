@@ -1,5 +1,5 @@
 .table {
-  margin: 15px;
+  margin: 15px auto;
   width: 450px;
   border-collapse: collapse;
 }
