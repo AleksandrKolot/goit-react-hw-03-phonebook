@@ -1,26 +1,26 @@
-import { Component } from "react";
-import s from "./ContactForm.module.css";
-import PropTypes from "prop-types";
+import { Component } from 'react';
+import s from './ContactForm.module.css';
+import PropTypes from 'prop-types';
 
 class ContactForm extends Component {
   state = {
-    name: "",
-    phone: "",
+    name: '',
+    phone: '',
   };
 
   handleChangeForm = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });
   };
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-    if (this.state.name.trim() === "" || this.state.number.trim() === "") {
-      alert("Fill in all the fields!");
+    if (this.state.name.trim() === '' || this.state.number.trim() === '') {
+      alert('Fill in all the fields!');
       return;
     }
     this.props.onSubmit(this.state);
 
-    this.setState({ name: "", number: "" });
+    this.setState({ name: '', number: '' });
   };
   render() {
     const { name, number } = this.state;
