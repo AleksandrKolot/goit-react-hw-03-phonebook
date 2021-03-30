@@ -1,5 +1,5 @@
-import s from "./ContactList.module.css";
-import PropTypes from "prop-types";
+import s from './ContactList.module.css';
+import PropTypes from 'prop-types';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
@@ -26,7 +26,7 @@ ContactList.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
-    })
+    }),
   ),
   onDeleteContact: PropTypes.func.isRequired,
 };
