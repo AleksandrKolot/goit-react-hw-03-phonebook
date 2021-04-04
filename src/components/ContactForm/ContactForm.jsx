@@ -1,21 +1,21 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import s from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
 class ContactForm extends Component {
   state = {
     name: '',
-    phone: '',
+    number: '',
   };
+  handleInputChange = e => {
+    const { name, value } = e.currentTarget;
 
-  handleChangeForm = ({ target }) => {
-    const { name, value } = target;
     this.setState({ [name]: value });
   };
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.name.trim() === '' || this.state.number.trim() === '') {
-      alert('Fill in all the fields!');
+      alert('Fill all fields!');
       return;
     }
     this.props.onSubmit(this.state);
@@ -33,7 +33,7 @@ class ContactForm extends Component {
             type="text"
             name="name"
             value={name}
-            onChange={this.handleChangeForm}
+            onChange={this.handleInputChange}
           />
         </label>
         <label className={s.label}>
@@ -43,7 +43,7 @@ class ContactForm extends Component {
             type="text"
             name="number"
             value={number}
-            onChange={this.handleChangeForm}
+            onChange={this.handleInputChange}
           />
         </label>
         <button type="submit">Add contact</button>

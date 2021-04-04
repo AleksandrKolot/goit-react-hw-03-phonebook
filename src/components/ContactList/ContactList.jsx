@@ -1,6 +1,5 @@
 import s from './ContactList.module.css';
 import PropTypes from 'prop-types';
-
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <table className={s.table}>
@@ -11,7 +10,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
             <td>{number}</td>
             <td>
               <button type="button" onClick={() => onDeleteContact(id)}>
-                delete
+                del
               </button>
             </td>
           </tr>
